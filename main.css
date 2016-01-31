@@ -1,0 +1,90 @@
+body {
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+#bonus {
+	width: 100%;
+	padding: 5px;
+	background-color: #BCA9F5;
+	font-size: 1.2rem;
+}
+
+#button-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: flex-start;
+}
+
+.container {
+	margin: 10px;
+	box-shadow: 0 8px 6px -6px black;
+}
+
+#game-board {
+	width: 600px;
+}
+
+#game-board, #score-board {
+	height: 400px;
+	display: inline-block;
+	vertical-align: top;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background-color: #F2F2F2;
+}
+
+.game-button {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	border-radius: 5px;
+	border: none;
+	font-weight: bold;
+	font-size: 1.9rem;
+	margin: 1rem 0 0 1rem;
+	transition-duration: 0.3s;
+	transition-property: box-shadow;
+}
+
+.game-button:hover {
+	cursor: pointer;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.header {
+	width: 100%;
+	padding: 12px;
+	background-color: #BCA9F5;
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+#new-game-button {
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	background-color: #2E2E2E;
+	border-radius: 3px;
+	border: none;
+}
+
+#new-game-button:hover {
+	cursor: pointer;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+#scoreboard {
+	width: 380px;
+}
+
+#scores {
+	height: 210px;
+}
+
+#total, #new-game {
+	margin: 10px;
+}

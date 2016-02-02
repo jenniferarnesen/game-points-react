@@ -1,0 +1,23 @@
+@media screen and (max-width: 980px) {
+    #game {
+        width: 95%;
+    }
+
+    #game-board {
+        width: 65%;
+    }
+
+    #score-board {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #game-board {
+        width: 100%;
+    }
+
+    #score-board {
+        width: 100%;
+    }
+}

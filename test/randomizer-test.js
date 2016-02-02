@@ -24,12 +24,12 @@ describe('Game Randomizer', function() {
 
     it('should initialize a game with a bonus scheme', function () {
         //mock the getRandomBoolean function so we are sure to get a bonus property
-        var revert = randomizer.__set__('getRandomBoolean', function (){return true;}),
+        var revert = randomizer.__set__('getRandomBoolean', function () {return true;}),
             game = randomizer.generate(),
             bonus = game.scoring['A'].bonus;
         revert();
         expect(bonus).to.be.defined;
-        expect(bonus.num).to.be.within(1, 2);
-        expect(bonus.total).to.be.within(10, 40);
+        expect(bonus.num).to.be.within(2, 3);
+        expect(bonus.total).to.be.defined;
     });
 });

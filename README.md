@@ -20,7 +20,7 @@ npm install
 ```
 
 
-To run in the browser:
+To run in the browser (defaults to localhost:8080):
 
 ```
 npm start

@@ -20,7 +20,6 @@ export default class Game extends React.Component {
 
     componentDidMount () {
         var items = game.init();
-        console.log('items are', items);
         this.initializeGame(items);
     }
 
@@ -44,7 +43,6 @@ export default class Game extends React.Component {
     }
 
     handleItemClicked = (item) => {
-        console.log('you clicked this', this.state);
         var gameData = this.state.data;
 
         gameData.items[item] = {

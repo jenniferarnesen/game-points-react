@@ -12,6 +12,14 @@ var getRandomInt = function (min, max, factor) {
 		return (Math.floor(Math.random() * (max - min)) + min) * factor;	
 	},
 
+	/**
+	 * Randomly generate a true or false value
+	 * @return {Boolean}
+	 */
+	getRandomBoolean = function () {
+		return !(Math.random() + .5 | 0);
+	},
+
 	/** 
 	 * Generate randomized game scoring data including
 	 * the points for each item, and the bonus scheme.
@@ -22,7 +30,7 @@ var getRandomInt = function (min, max, factor) {
 	 * @return {Object}
 	 */
 	getItemScoring = function (item, name) {
-		var hasBonus = !(Math.random() + .5 | 0);
+		var hasBonus = getRandomBoolean();
 
 		item[name] = {
 			unit: getRandomInt(1, 3, 10)
@@ -49,7 +57,7 @@ var getRandomInt = function (min, max, factor) {
 		var letters = 'ABCDEFGHIJKL',
 			numItems = getRandomInt(MIN_GAME_ITEMS, letters.length, 1),
 			names = letters.split('').slice(0, numItems);
-
+			
 		return {
 			names: names,
 			scoring: names.reduce(getItemScoring, {})

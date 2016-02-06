@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha  unit/randomizer-test.js",
+    "test": "mocha",
     "build": "webpack",
     "start": "webpack-dev-server",
     "e2e": "protractor protractor.conf.js"

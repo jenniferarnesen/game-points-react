@@ -6,9 +6,22 @@ exports.config = {
 
 	directConnect: true,
 
-	baseUrl: 'http://localhost:8080/',
+	baseUrl: 'http://localhost:8080',
+
+	capabilities: {
+		browserName: 'chrome'
+	},
+
+	allScriptsTimeout: 11000,
+
+	// How long to wait for a page to load.
+	getPageTimeout: 10000,
 
 	framework: 'mocha',
 
-  	specs: ['test/todo-spec.js']
+	mochaOpts: {
+   		timeout: 7500
+  	},
+
+  	specs: ['test/e2e/**/*.js']
 };

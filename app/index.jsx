@@ -1,4 +1,6 @@
+import './css/reset.css';
 import './css/main.css';
+import './css/responsive.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

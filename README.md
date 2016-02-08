@@ -32,3 +32,11 @@ To run the unit tests:
 ```
 npm test
 ```
+
+To run the e2e tests:
+
+```
+webdriver-manager start
+npm start
+npm run e2e (in a separate terminal)
+```

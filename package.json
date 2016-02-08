@@ -7,7 +7,7 @@
     "test": "mocha",
     "build": "webpack",
     "start": "webpack-dev-server",
-    "e2e": "protractor protractor.conf.js"
+    "e2e": "nightwatch --config nightwatch.json --env chrome"
   },
   "keywords": [],
   "author": "",
@@ -33,7 +33,7 @@
     "karma-mocha": "^0.2.1",
     "karma-sinon": "^1.0.4",
     "mocha": "^2.4.5",
-    "protractor": "^3.0.0",
+    "nightwatch": "^0.8.16",
     "rewire": "^2.5.1",
     "selenium-webdriver": "^2.48.2",
     "sinon": "^1.17.3",

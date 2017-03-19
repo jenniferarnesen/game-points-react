@@ -2,7 +2,7 @@ import React from 'react';
 import Scores from './Scores.jsx';
 import GameSummary from './GameSummary.jsx';
 
-const ScoreBoard = ({onNewGameClicked, data}) => (
+const ScoreBoard = ({data, onNewGameClicked}) => (
   <section id="score-board">
     <header className="header">
       Player Items

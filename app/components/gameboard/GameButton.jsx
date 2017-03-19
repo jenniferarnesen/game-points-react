@@ -1,23 +1,23 @@
 import React from 'react';
 import colorize from '../../lib/colorize.js';
 
-const GameButton = (props) => {
+const GameButton = ({btn, onItemClicked}) => {
   const handleClick = (e) => {
     e.preventDefault();
-    props.onTheItemClicked(e.target.value);
+    onItemClicked(e.target.value);
   };
   
   const btnStyle = {
-    backgroundColor: colorize(props.btn)
+    backgroundColor: colorize(btn)
   };
 
   return (
     <button
-      value={props.btn}
+      value={btn}
       className="game-button"
       style={btnStyle}
       onClick={handleClick}>
-      {props.btn}
+      {btn}
     </button>
   );
 }

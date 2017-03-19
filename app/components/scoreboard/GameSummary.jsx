@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GameSummary = ({onNewGameClicked, totals}) => (
+const GameSummary = ({totals, onNewGameClicked}) => (
   <summary id="game-summary">
     <div id="bonus">
       <span>Bonus points: </span>

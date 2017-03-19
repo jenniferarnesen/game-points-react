@@ -1,7 +1,9 @@
 {
     "env": {
+        "es6": true,
         "browser": true,
-        "node": true
+        "node": true,
+        "mocha": true
     },
     "parserOptions": {
         "ecmaVersion": 6,
@@ -10,15 +12,27 @@
             "jsx": true
         }
     },
+    "files": [
+        {
+            "patterns": [ "app/components/**/*.js" ],
+            "rules": { "react/display-name": 2 },
+            "ecmaFeatures": { "jsx": true },
+            "plugins": [ "react" ]
+        }
+    ],
     "extends": [
         "eslint:recommended",
         "esnext"
     ],
     "plugins": [
-        "react"
+        "react",
+        "chai-friendly"
     ],
     "rules": {
         "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error"
+        "react/jsx-uses-vars": "error",
+        "no-unused-expressions": 0,
+        "chai-friendly/no-unused-expressions": 2,
+        "import/no-commonjs": 1
     }
 }

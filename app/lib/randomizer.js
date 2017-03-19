@@ -60,5 +60,5 @@ const getRandomInt = (min, max, factor) => (Math.floor(Math.random() * (max - mi
     };
   };
 
- export default generate;
-// module.exports = generate;
+// export default generate;
+module.exports = generate;

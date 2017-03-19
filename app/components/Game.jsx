@@ -1,9 +1,7 @@
 import React from 'react';
-
 import game from '../lib/game.js';
-
-import GameBoard from './Gameboard.jsx';
-import ScoreBoard from './Scoreboard.jsx';
+import GameBoard from './gameboard/Gameboard.jsx';
+import ScoreBoard from './scoreboard/Scoreboard.jsx';
 
 export default class Game extends React.Component {
 
@@ -19,14 +17,14 @@ export default class Game extends React.Component {
   }
 
   componentDidMount() {
-    var items = game.init();
+    const items = game.init();
     this.initializeGame(items);
   }
 
   initializeGame(items) {
-    var gameData = {};
+    const gameData = {};
 
-    gameData.items = Object.keys(items).reduce(function (obj, curr) {
+    gameData.items = Object.keys(items).reduce((obj, curr) => {
       obj[curr] = {
         quantity: items[curr],
         score: game.score(curr)
@@ -43,7 +41,7 @@ export default class Game extends React.Component {
   }
 
   handleItemClicked = (item) => {
-    var gameData = this.state.data;
+    const gameData = this.state.data;
 
     gameData.items[item] = {
       quantity: game.increment(item),
@@ -58,7 +56,7 @@ export default class Game extends React.Component {
   };
 
   handleNewGameClicked = () => {
-    var items = game.reset();
+    const items = game.reset();
     this.initializeGame(items);
   };
 

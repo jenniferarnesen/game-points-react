@@ -4,6 +4,13 @@ import './css/responsive.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import Game from './components/Game.jsx';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const MyComp = (props) => (
+  <article>
+    <h1>Hey Jen</h1>
+    <p>This is a paragraph</p>
+  </article>
+)
+
+ReactDOM.render(<Game />, document.getElementById('app'));

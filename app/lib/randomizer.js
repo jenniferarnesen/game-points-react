@@ -8,17 +8,13 @@ const MIN_GAME_ITEMS = 3;
  * @param  {Integer} factor Factor to multiply by
  * @return {Integer}
  */
-const getRandomInt = (min, max, factor) => {
-  return (Math.floor(Math.random() * (max - min)) + min) * factor;
-},
+const getRandomInt = (min, max, factor) => (Math.floor(Math.random() * (max - min)) + min) * factor,
 
 	/**
 	 * Randomly generate a true or false value
 	 * @return {Boolean}
 	 */
-  getRandomBoolean = () => {
-    return !(Math.random() + .5 | 0);
-  },
+  getRandomBoolean = () => !(Math.random() + .5 | 0),
 
 	/** 
 	 * Generate randomized game scoring data including
@@ -59,11 +55,11 @@ const getRandomInt = (min, max, factor) => {
       names = letters.split('').slice(0, numItems);
 
     return {
-      names: names,
+      names,
       scoring: names.reduce(getItemScoring, {})
     };
   };
 
-module.exports = {
-  generate: generate
+ export default {
+  generate
 };

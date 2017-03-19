@@ -1,29 +1,29 @@
-var randomizer = require('./randomizer');
+import randomizer from './randomizer';
 
-var items = {},
+let items = {},
 
-  scoring = {},
+  scoring = {};
 
-	/**
-	 * Calculate the bonus for a given item
-	 *
-	 * @param  {String} item Item name
-	 * @return {Integer}
-	 */
-  itemBonus = function (item) {
-    var bonus = 0,
-      bonusNum = scoring[item].bonus ? scoring[item].bonus.num : 0;
+/**
+ * Calculate the bonus for a given item
+ *
+ * @param  {String} item Item name
+ * @return {Integer}
+ */
+const itemBonus = function (item) {
+  let bonus = 0;
+  const bonusNum = scoring[item].bonus ? scoring[item].bonus.num : 0;
 
-    if (bonusNum > 0) {
-      var numBonuses = Math.floor(items[item] / bonusNum);
+  if (bonusNum > 0) {
+    const numBonuses = Math.floor(items[item] / bonusNum);
 
-      bonus =
-        (numBonuses * scoring[item].bonus.total) -
-        (numBonuses * scoring[item].bonus.num) * scoring[item].unit;
-    }
+    bonus =
+      (numBonuses * scoring[item].bonus.total) -
+      (numBonuses * scoring[item].bonus.num) * scoring[item].unit;
+  }
 
-    return bonus;
-  },
+  return bonus;
+},
 
 	/**
 	 * Calculate the total score for a given item
@@ -55,9 +55,7 @@ var items = {},
 	 */
   bonus = function () {
     return Object.keys(items)
-      .reduce(function (previous, current) {
-        return previous + itemBonus(current);
-      }, 0);
+      .reduce((previous, current) => previous + itemBonus(current), 0);
   },
 
 	/**
@@ -67,9 +65,7 @@ var items = {},
 	 */
   total = function () {
     return Object.keys(items)
-      .reduce(function (previous, current) {
-        return previous + score(current);
-      }, 0);
+      .reduce((previous, current) => previous + score(current), 0);
   },
 
 	/**
@@ -79,7 +75,7 @@ var items = {},
 	 */
   reset = function () {
     Object.keys(items)
-      .forEach(function (item) {
+      .forEach((item) => {
         items[item] = 0;
       });
     return items;
@@ -92,9 +88,9 @@ var items = {},
 	 * @return {Object}
 	 */
   init = function () {
-    var randomGame = randomizer.generate();
+    const randomGame = randomizer.generate();
 
-    items = randomGame.names.reduce(function (obj, name) {
+    items = randomGame.names.reduce((obj, name) => {
       obj[name] = 0;
       return obj;
     }, {});
@@ -104,11 +100,11 @@ var items = {},
     return items;
   };
 
-module.exports = {
-  increment: increment,
-  score: score,
-  bonus: bonus,
-  total: total,
-  reset: reset,
-  init: init
+export default {
+  increment,
+  score,
+  bonus,
+  total,
+  reset,
+  init
 };

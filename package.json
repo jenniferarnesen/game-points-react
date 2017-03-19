@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
     "build": "webpack",
+    "e2e": "nightwatch --config nightwatch.json --env chrome",
+    "lint": "eslint app/**.js*",
     "start": "webpack-dev-server",
-    "e2e": "nightwatch --config nightwatch.json --env chrome"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "chai-as-promised": "^5.2.0",
     "chromedriver": "^2.21.2",
     "css-loader": "^0.23.1",
+    "eslint": "^3.18.0",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^1.7.0",
     "html-webpack-template": "^2.5.2",

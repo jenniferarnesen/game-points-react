@@ -19,13 +19,11 @@ To set up:
 npm install
 ```
 
-
 To run in the browser (defaults to localhost:8080):
 
 ```
 npm start
 ```
-
 
 To run the unit tests:
 

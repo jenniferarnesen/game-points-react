@@ -7,70 +7,70 @@ import ScoreBoard from './Scoreboard.jsx';
 
 export default class Game extends React.Component {
 
-    constructor (props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            data: {
-                items: {},
-                totals: {}
-            }
-        };
-    }
+    this.state = {
+      data: {
+        items: {},
+        totals: {}
+      }
+    };
+  }
 
-    componentDidMount () {
-        var items = game.init();
-        this.initializeGame(items);
-    }
+  componentDidMount() {
+    var items = game.init();
+    this.initializeGame(items);
+  }
 
-    initializeGame (items) {
-        var gameData = {};
+  initializeGame(items) {
+    var gameData = {};
 
-        gameData.items = Object.keys(items).reduce(function (obj, curr) {
-            obj[curr] = {
-                quantity: items[curr],
-                score: game.score(curr)
-            };
-            return obj;
-        }, {});
+    gameData.items = Object.keys(items).reduce(function (obj, curr) {
+      obj[curr] = {
+        quantity: items[curr],
+        score: game.score(curr)
+      };
+      return obj;
+    }, {});
 
-        gameData.totals = {
-            bonus: game.bonus(),
-            total: game.total()
-        };
-
-        this.setState({data: gameData});
-    }
-
-    handleItemClicked = (item) => {
-        var gameData = this.state.data;
-
-        gameData.items[item] = {
-            quantity: game.increment(item),
-            score: game.score(item)
-        };
-
-        gameData.totals = {
-            bonus: game.bonus(),
-            total: game.total()
-        };
-        this.setState({data: gameData});
+    gameData.totals = {
+      bonus: game.bonus(),
+      total: game.total()
     };
 
-    handleNewGameClicked = () => {
-        var items = game.reset();
-        this.initializeGame(items);
+    this.setState({ data: gameData });
+  }
+
+  handleItemClicked = (item) => {
+    var gameData = this.state.data;
+
+    gameData.items[item] = {
+      quantity: game.increment(item),
+      score: game.score(item)
     };
 
-    render() {
-        return (
-            <article id="game">
-                <GameBoard
-                    data={this.state.data.items}
-                    onItemClicked={this.handleItemClicked}/>
-                <ScoreBoard data={this.state.data}
-                    onNewGameClicked={this.handleNewGameClicked}/>
-            </article>
-        );
-    }
+    gameData.totals = {
+      bonus: game.bonus(),
+      total: game.total()
+    };
+    this.setState({ data: gameData });
+  };
+
+  handleNewGameClicked = () => {
+    var items = game.reset();
+    this.initializeGame(items);
+  };
+
+  render() {
+    return (
+      <article id="game">
+        <GameBoard
+          data={this.state.data.items}
+          onItemClicked={this.handleItemClicked} />
+        <ScoreBoard data={this.state.data}
+          onNewGameClicked={this.handleNewGameClicked} />
+      </article>
+    );
+  }
 }

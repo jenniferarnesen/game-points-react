@@ -1,7 +1,6 @@
 import randomizer from './randomizer';
 
 let items = {},
-
   scoring = {};
 
 /**
@@ -10,7 +9,7 @@ let items = {},
  * @param  {String} item Item name
  * @return {Integer}
  */
-const itemBonus = function (item) {
+const itemBonus = (item) => {
   let bonus = 0;
   const bonusNum = scoring[item].bonus ? scoring[item].bonus.num : 0;
 
@@ -31,9 +30,7 @@ const itemBonus = function (item) {
 	 * @param  {String} item Item name
 	 * @return {Integer}
 	 */
-  score = function (item) {
-    return (items[item] * scoring[item].unit) + itemBonus(item);
-  },
+  score = (item) => (items[item] * scoring[item].unit) + itemBonus(item),
 
 	/**
 	 * Increment the quantity for a given item
@@ -42,7 +39,7 @@ const itemBonus = function (item) {
 	 * @param  {String} item Item name
 	 * @return {Integer}
 	 */
-  increment = function (item) {
+  increment = (item) => {
     items[item] += 1;
 
     return items[item];
@@ -53,27 +50,21 @@ const itemBonus = function (item) {
 	 *
 	 * @return {Integer}
 	 */
-  bonus = function () {
-    return Object.keys(items)
-      .reduce((previous, current) => previous + itemBonus(current), 0);
-  },
+  bonus = () => Object.keys(items).reduce((previous, current) => previous + itemBonus(current), 0),
 
 	/**
 	 * Return the total score for the game
 	 *
 	 * @return {Integer}
 	 */
-  total = function () {
-    return Object.keys(items)
-      .reduce((previous, current) => previous + score(current), 0);
-  },
+  total = () => Object.keys(items).reduce((previous, current) => previous + score(current), 0),
 
 	/**
 	 * Clear the quantities of all the items
 	 *
 	 * @return {Object}
 	 */
-  reset = function () {
+  reset = () => {
     Object.keys(items)
       .forEach((item) => {
         items[item] = 0;
@@ -87,7 +78,7 @@ const itemBonus = function (item) {
 	 *
 	 * @return {Object}
 	 */
-  init = function () {
+  init = () => {
     const randomGame = randomizer();
 
     items = randomGame.names.reduce((obj, name) => {

@@ -88,7 +88,7 @@ const itemBonus = function (item) {
 	 * @return {Object}
 	 */
   init = function () {
-    const randomGame = randomizer.generate();
+    const randomGame = randomizer();
 
     items = randomGame.names.reduce((obj, name) => {
       obj[name] = 0;

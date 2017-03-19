@@ -49,7 +49,7 @@ const getRandomInt = (min, max, factor) => (Math.floor(Math.random() * (max - mi
 	 *
 	 * @return {Object}
 	 */
-  generate = function () {
+  generate = () => {
     const letters = 'ABCDEFGHIJKL',
       numItems = getRandomInt(MIN_GAME_ITEMS, letters.length, 1),
       names = letters.split('').slice(0, numItems);
@@ -60,6 +60,5 @@ const getRandomInt = (min, max, factor) => (Math.floor(Math.random() * (max - mi
     };
   };
 
- export default {
-  generate
-};
+ export default generate;
+// module.exports = generate;

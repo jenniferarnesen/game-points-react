@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
-  build: path.join(__dirname, 'dist')
+  dist: path.join(__dirname, 'dist')
 };
 
 

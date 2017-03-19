@@ -1,9 +1,9 @@
 import React from 'react';
 import GameButton from './GameButton.jsx';
 
-const GameBoard = (props) => {
-  const theHandler = props.onItemClicked,
-    buttons = Object.keys(props.data).map((button) => (
+const GameBoard = ({onItemClicked, items}) => {
+  const theHandler = onItemClicked,
+    buttons = Object.keys(items).map((button) => (
       <GameButton
         btn={button}
         key={button}

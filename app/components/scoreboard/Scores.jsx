@@ -1,15 +1,13 @@
 import React from 'react';
 import ScoreRow from './ScoreRow.jsx';
 
-const Scores = (props) => {
-  const data = props.data,
-
-    rows = Object.keys(props.data).map((item) => {
-      const itemData = data[item];
-      return (
-        <ScoreRow item={item} itemData={itemData} key={item} />
-      );
-    });
+const Scores = ({items}) => {
+  const rows = Object.keys(items).map((itemName) => {
+    const {quantity, score} = items[itemName];
+    return (
+      <ScoreRow itemName={itemName} quantity={quantity} score={score} key={itemName} />
+    );
+  });
 
   return (
     <table id="score-table">

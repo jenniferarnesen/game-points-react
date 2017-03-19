@@ -1,13 +1,13 @@
 import React from 'react';
 
-const ScoreRow = (props) => (
+const ScoreRow = ({itemName, quantity, score}) => (
   <tr>
-    <td> {props.item} </td>
-    <td className="{props.item}-quantity">
-      {props.itemData.quantity}
+    <td> {itemName} </td>
+    <td className="{item}-quantity">
+      {quantity}
     </td>
-    <td className="{props.item}-score">
-      {props.itemData.score}
+    <td className="{item}-score">
+      {score}
     </td>
   </tr>
 );

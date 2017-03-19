@@ -64,9 +64,10 @@ export default class Game extends React.Component {
     return (
       <article id="game">
         <GameBoard
-          data={this.state.data.items}
+          items={this.state.data.items}
           onItemClicked={this.handleItemClicked} />
-        <ScoreBoard data={this.state.data}
+        <ScoreBoard
+          data={this.state.data}
           onNewGameClicked={this.handleNewGameClicked} />
       </article>
     );

@@ -1,7 +1,7 @@
 const colorMap = {},
 
   //generate a not-too-dark color
-  generate = function () {
+  generate = () => {
     const letters = '789ABCD';
     let color = '#';
     for (let i = 0; i < 6; i++) {
@@ -10,11 +10,10 @@ const colorMap = {},
     return color;
   };
 
-export default function (item) {
+export default (item) => {
   if (!colorMap[item]) {
     colorMap[item] = generate();
   }
 
   return colorMap[item];
 }
-

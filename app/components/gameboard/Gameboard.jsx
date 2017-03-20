@@ -1,6 +1,6 @@
 import styles from './gameboard.css';
 import React from 'react';
-import GameButton from './GameButton.jsx';
+import GameButton from './gameButton/GameButton.jsx';
 
 const GameBoard = ({items, onItemClicked}) => {
   const buttons = Object.keys(items).map((button) => (

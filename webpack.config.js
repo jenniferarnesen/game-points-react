@@ -1,12 +1,10 @@
 const path = require('path');
 const debug = process.env.NODE_ENV !== "production";
-const webpack = require('webpack');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
   dist: path.join(__dirname, 'dist')
 };
-
 
 module.exports = {
   context: __dirname,
@@ -20,18 +18,13 @@ module.exports = {
     loaders: [
       {
         test: /\.css$/,
-        loaders: ['style', 'css'],
+        use: ['style-loader', 'css-loader'],
         // loaders: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
         include: PATHS.app
       },
       {
         test: /\.jsx?$/,
-        loaders: ['babel?cacheDirectory'],
-        include: PATHS.app
-      },
-      {
-        test: /\.(png|jpg)$/,
-        loader: 'url-loader?limit=8192',
+        use: ['babel-loader?cacheDirectory'],
         include: PATHS.app
       }
     ]

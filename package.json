@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV='development' webpack",
+    "build": "npm run clean && NODE_ENV='development' webpack",
+    "clean": "rimraf dist/*.js",
     "e2e": "nightwatch --config nightwatch.json --env chrome",
     "lint": "eslint app --ext=js,jsx",
     "start": "webpack-dev-server --inline --content-base dist/",
@@ -42,6 +43,7 @@
     "mocha": "^3.2.0",
     "nightwatch": "^0.9.13",
     "rewire": "^2.5.1",
+    "rimraf": "^2.6.1",
     "selenium-webdriver": "^3.3.0",
     "sinon": "^2.0.0",
     "style-loader": "^0.14.1",

@@ -1,3 +1,4 @@
+import styles from './gamebutton.css';
 import React from 'react';
 import colorize from '../../lib/colorize.js';
 
@@ -14,7 +15,7 @@ const GameButton = ({btn, onItemClicked}) => {
   return (
     <button
       value={btn}
-      className="game-button"
+      className={styles["game-button"]}
       style={btnStyle}
       onClick={handleClick}>
       {btn}

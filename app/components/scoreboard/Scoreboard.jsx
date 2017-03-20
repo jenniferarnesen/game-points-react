@@ -1,16 +1,15 @@
+import styles from './scoreboard.css';
 import React from 'react';
-import Scores from './Scores.jsx';
+import ScoreTable from './scoretable/ScoreTable.jsx';
 import GameSummary from './GameSummary.jsx';
 
 const ScoreBoard = ({data, onNewGameClicked}) => (
-  <section id="score-board">
-    <header className="header">
+  <section className={styles.scoreboard}>
+    <header className={styles.header}>
       Player Items
     </header>
-    <Scores items={data.items} />
-    <GameSummary
-      totals={data.totals}
-      onNewGameClicked={onNewGameClicked} />
+    <ScoreTable items={data.items} />
+    <GameSummary totals={data.totals} onNewGameClicked={onNewGameClicked} />
   </section>
 );
 

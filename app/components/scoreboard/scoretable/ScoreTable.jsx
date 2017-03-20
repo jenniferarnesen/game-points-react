@@ -1,3 +1,4 @@
+import {scoretable} from './scoreTable.css';
 import React from 'react';
 import ScoreRow from './ScoreRow.jsx';
 
@@ -10,7 +11,7 @@ const Scores = ({items}) => {
   });
 
   return (
-    <table id="score-table">
+    <table className={scoretable}>
       <thead>
         <tr>
           <th>Item</th>

@@ -1,0 +1,26 @@
+.bonus {
+  background-color: #BCA9F5;
+  font-size: 1.2rem;
+  padding: 5px;
+  width: 100%;
+}
+
+.new-game-button {
+  background-color: #2E2E2E;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  height: 30px;
+  text-align: center;
+  width: 80px;
+}
+
+.new-game-button:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.new-game, .total {
+  margin: 10px;
+}

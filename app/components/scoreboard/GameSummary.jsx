@@ -1,8 +1,9 @@
+import styles from './gameSummary.css';
 import React from 'react';
 
 const GameSummary = ({totals, onNewGameClicked}) => (
   <summary id="game-summary">
-    <div id="bonus">
+    <div className={styles.bonus}>
       <span>Bonus points: </span>
       <span>{totals.bonus}</span>
     </div>
@@ -10,8 +11,8 @@ const GameSummary = ({totals, onNewGameClicked}) => (
       <span>Total points: </span>
       <span>{totals.total}</span>
     </div>
-    <div id="new-game">
-      <button id="new-game-button" onClick={onNewGameClicked}>
+    <div className={styles["new-game"]}>
+      <button className={styles["new-game-button"]} onClick={onNewGameClicked}>
         New Game
       </button>
     </div>

@@ -1,3 +1,4 @@
+import styles from './gameboard.css';
 import React from 'react';
 import GameButton from './GameButton.jsx';
 
@@ -7,11 +8,11 @@ const GameBoard = ({items, onItemClicked}) => {
   ));
 
   return (
-    <section id="game-board">
-      <header className="header">
+    <section className={styles["game-board"]}>
+      <header className={styles.header}>
         Random, meaningless points game
       </header>
-      <div id="button-container">
+      <div className={styles["button-container"]}>
         {buttons}
       </div>
     </section>

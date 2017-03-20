@@ -1,0 +1,28 @@
+.button-container {
+  align-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.game-board {
+  background-color: #F2F2F2;
+  display: inline-block;
+  height: 420px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 600px;
+  vertical-align: top;
+}
+
+.header {
+  background-color: #BCA9F5;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 12px;
+  width: 100%;
+}
+
+
+

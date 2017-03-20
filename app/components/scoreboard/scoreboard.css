@@ -1,0 +1,17 @@
+.scoreboard {
+  background-color: #F2F2F2;
+  display: inline-block;
+  height: 420px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  vertical-align: top;
+  width: 380px;
+}
+
+.header {
+  background-color: #BCA9F5;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 12px;
+  width: 100%;
+}
